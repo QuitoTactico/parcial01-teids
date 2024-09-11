@@ -7,7 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class ReviewController extends Controller
+class FishController extends Controller
 {
     public function index(): View
     {
@@ -30,13 +30,12 @@ class ReviewController extends Controller
     public function save(Request $request): RedirectResponse
     {
         $request->validate([
-            'rating' => 'required|numeric|min:1|max:5',
-            'comment' => 'required|max:500',
-            'game' => 'required',
-            'client' => 'required',
+            'name' => 'required|string|max:255',
+            'species' => 'required|in:Frog Dog,Big Head',
+            'weight' => 'required|numeric|min:0',
         ]);
 
-        Fish::create($request->only(['rating', 'comment', 'game', 'client']));
+        Fish::create($request->only(['name', 'species', 'weight']));
 
         return redirect()->route('fish.success');
     }
@@ -48,16 +47,5 @@ class ReviewController extends Controller
         $viewData['subtitle'] = 'Fish created successfully';
 
         return view('fish.success')->with('viewData', $viewData);
-    }
-
-    public function destroy(string $id): RedirectResponse // according to RESTful conventions
-    {
-        try {
-            Fish::findOrFail($id)->delete();
-        } catch (\Exception $e) {
-            return redirect()->route('fish.nonexistent');
-        }
-
-        return redirect()->route('fish.index');
     }
 }

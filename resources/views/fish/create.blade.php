@@ -5,7 +5,7 @@
     <div class="row justify-content-center"> 
         <div class="col-md-8"> 
         <div class="card"> 
-            <div class="card-header">Create review</div> 
+            <div class="card-header">Create Fish</div> 
             <div class="card-body"> 
                 @if($errors->any()) 
                 <ul id="errors" class="alert alert-danger list-unstyled"> 
@@ -15,17 +15,18 @@
                 </ul> 
                 @endif 
     
-                <form method="POST" action="{{ route('review.save') }}"> 
+                <form method="POST" action="{{ route('fish.save') }}"> 
                     @csrf 
-                    <input type="number" class="form-control mb-2" placeholder="Enter rating (1-5)" name="rating" 
-                    value="{{ old('rating') }}" min="1" max="5" />
-                    <input type="text" class="form-control mb-2" placeholder="Enter comment" name="comment" 
-                    value="{{ old('comment') }}" /> 
-                    <input type="text" class="form-control mb-2" placeholder="Enter game" name="game" 
-                    value="{{ old('game') }}" /> 
-                    <input type="text" class="form-control mb-2" placeholder="Enter client" name="client" 
-                    value="{{ old('client') }}" /> 
-                    <input type="submit" class="btn btn-primary" value="Send" /> 
+                    <input type="text" class="form-control mb-2" placeholder="Enter name" name="name" 
+                    value="{{ old('name') }}" required />
+                    <select class="form-control mb-2" name="species" required>
+                        <option value="" disabled selected>Select species</option>
+                        <option value="Frog Dog" {{ old('species') == 'Frog Dog' ? 'selected' : '' }}>Frog Dog</option>
+                        <option value="Big Head" {{ old('species') == 'Big Head' ? 'selected' : '' }}>Big Head</option>
+                    </select>
+                    <input type="number" step="0.01" class="form-control mb-2" placeholder="Enter weight" name="weight" 
+                    value="{{ old('weight') }}" required />
+                    <input type="submit" class="btn btn-primary" value="Register" /> 
                 </form> 
             </div> 
             </div> 

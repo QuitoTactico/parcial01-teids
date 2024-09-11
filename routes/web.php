@@ -13,8 +13,8 @@ Route::delete('/reviews/{id}', 'App\Http\Controllers\ReviewController@destroy')-
 
 # Parcial 1:
 
-Route::get('/Fishes', 'App\Http\Controllers\FishController@index')->name('Fish.index');
-Route::get('/Fishes/create', 'App\Http\Controllers\FishController@create')->name('Fish.create');
-Route::post('/Fishes/save', 'App\Http\Controllers\FishController@save')->name('Fish.save');
-Route::get('/Fishes/success', 'App\Http\Controllers\FishController@success')->name('Fish.success');
-Route::get('/Fishes/stats', 'App\Http\Controllers\FishController@stats')->name('Fish.stats');
+Route::get('/fishes', 'App\Http\Controllers\FishController@index')->name('Fish.index');
+Route::get('/fishes/create', 'App\Http\Controllers\FishController@create')->name('Fish.create');
+Route::post('/fishes/save', 'App\Http\Controllers\FishController@save')->name('Fish.save');
+Route::get('/fishes/success', 'App\Http\Controllers\FishController@success')->name('Fish.success');
+Route::get('/fishes/stats', 'App\Http\Controllers\FishController@stats')->name('Fish.stats');

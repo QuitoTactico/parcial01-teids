@@ -2,13 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Fish extends Model
 {
-    use HasFactory;
-
     /**
      * FISH ATTRIBUTES
      * $this->attributes['id'] - int - contains the fish primary key (id)
@@ -37,7 +34,6 @@ class Fish extends Model
     {
         return $this->attributes['species'];
     }
-
 
     public function setSpecies(string $species): void
     {

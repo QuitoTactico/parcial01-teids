@@ -1,5 +1,5 @@
 @extends('layouts.app') 
-@section('title', 'Home Page - PIXEL PLAZA') 
+@section('title', 'Home Page - FISH PLAZA') 
 @section('content') 
 <div class="text-center"> 
   <div class="btn-group mt-3" role="group" aria-label="Fish Management">

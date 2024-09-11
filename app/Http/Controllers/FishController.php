@@ -12,9 +12,9 @@ class FishController extends Controller
     public function index(): View
     {
         $viewData = [];
-        $viewData['title'] = 'Fishes - PIXEL PLAZA';
+        $viewData['title'] = 'Fishes - FISH PLAZA';
         $viewData['subtitle'] = 'List of fishes';
-        $viewData['fishes'] = Fish::all();
+        $viewData['fishes'] = Fish::orderBy('weight', 'asc')->get();
 
         return view('fish.index')->with('viewData', $viewData);
     }
@@ -47,5 +47,19 @@ class FishController extends Controller
         $viewData['subtitle'] = 'Fish registered successfully';
 
         return view('fish.success')->with('viewData', $viewData);
+    }
+
+    public function stats(): View
+    {
+        $viewData = [];
+        $viewData['title'] = 'Fish Statistics';
+        $viewData['subtitle'] = 'Statistics of registered fishes';
+
+        $viewData['frogDogCount'] = Fish::where('species', 'Frog Dog')->count();
+        $viewData['bigHeadCount'] = Fish::where('species', 'Big Head')->count();
+
+        $viewData['maxWeight'] = Fish::max('weight');
+
+        return view('fish.stats')->with('viewData', $viewData);
     }
 }

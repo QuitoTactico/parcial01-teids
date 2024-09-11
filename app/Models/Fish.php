@@ -14,6 +14,7 @@ class Fish extends Model
      * $this->attributes['weight'] - float - contains the fish weight
      */
     protected $guarded = ['id']; // id is non-fillable
+
     protected $table = 'Fishes'; // table name
 
     public function getId(): int

@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->enum('species', ['Frog Dog', 'Big Head']);
             $table->float('weight');
-        
             $table->timestamps();
         });
     }

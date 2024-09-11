@@ -12,7 +12,7 @@ class ReviewController extends Controller
     public function index(): View
     {
         $viewData = [];
-        $viewData['title'] = 'Reviews - PIXEL PLAZA';
+        $viewData['title'] = 'Reviews - FISH PLAZA';
         $viewData['subtitle'] = 'List of reviews';
         $viewData['reviews'] = Review::all();
 
@@ -27,7 +27,7 @@ class ReviewController extends Controller
         } catch (\Exception $e) {
             return redirect()->route('review.nonexistent');
         }
-        $viewData['title'] = 'Review #'.$id.' - PIXEL PLAZA';
+        $viewData['title'] = 'Review #'.$id.' - FISH PLAZA';
         $viewData['subtitle'] = 'Review #'.$id.' - Review information';
         $viewData['review'] = $review;
 

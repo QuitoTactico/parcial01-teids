@@ -11,7 +11,7 @@ Route::get('/reviews/nonexistent', 'App\Http\Controllers\ReviewController@nonexi
 Route::get('/reviews/{id}', 'App\Http\Controllers\ReviewController@show')->name('review.show');
 Route::delete('/reviews/{id}', 'App\Http\Controllers\ReviewController@destroy')->name('review.destroy');
 
-# Parcial 1:
+// Parcial 1:
 
 Route::get('/fishes', 'App\Http\Controllers\FishController@index')->name('fish.index');
 Route::get('/fishes/register', 'App\Http\Controllers\FishController@register')->name('fish.register');

@@ -5,7 +5,7 @@
     <div class="row justify-content-center"> 
         <div class="col-md-8"> 
         <div class="card"> 
-            <div class="card-header">Create Fish</div> 
+            <div class="card-header">Register Fish</div> 
             <div class="card-body"> 
                 @if($errors->any()) 
                 <ul id="errors" class="alert alert-danger list-unstyled"> 

@@ -5,9 +5,9 @@
 <div class="container"> 
   <div class="row"> 
     <div class="col-lg-4 mx-auto"> 
-      <p class="lead">Review created!</p> 
+      <p class="lead">Fish registered successfully!</p> 
     </div>
-    <img src="https://images3.memedroid.com/images/UPLOADED430/5f763b547dc6a.jpeg" alt="spider-piola">
+    <img src="https://spinning.fish/fish.gif" alt="fish">
     </div> 
   </div> 
 </div> 

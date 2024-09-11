@@ -22,7 +22,10 @@
                     <div class="navbar-nav ms-auto">
                         <a class="nav-link active" href="{{ route('home.index') }}">Home</a>
                         <a class="nav-link active" href="{{ route('review.index') }}">Reviews</a>
-                        <a class="nav-link active" href="{{ route('review.create') }}">Create</a>
+                        <a class="nav-link active" href="{{ route('review.create') }}">Create Review</a>
+                        <a class="nav-link active" href="{{ route('fish.register') }}">Register Fish</a>
+                        <a class="nav-link active" href="{{ route('fish.index') }}">List Fish</a>
+                        <a class="nav-link active" href="{{ route('fish.stats') }}">Fish Statistics</a>
                     </div>
                 </div>
             </div>
@@ -30,7 +33,7 @@
 
         <header class="masthead bg-primary text-white text-center py-4">
             <div class="container d-flex align-items-center flex-column">
-                <h2>@yield('subtitle', 'The best game shop!')</h2>
+                <h2>@yield('subtitle', 'The best... Fish comparation site? (idk)')</h2>
             </div>
         </header>
         <!-- header -->

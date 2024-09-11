@@ -19,12 +19,12 @@ class FishController extends Controller
         return view('fish.index')->with('viewData', $viewData);
     }
 
-    public function create(): View
+    public function register(): View
     {
         $viewData = []; //to be sent to the view
-        $viewData['title'] = 'Create fish';
+        $viewData['title'] = 'Register fish';
 
-        return view('fish.create')->with('viewData', $viewData);
+        return view('fish.register')->with('viewData', $viewData);
     }
 
     public function save(Request $request): RedirectResponse
@@ -43,8 +43,8 @@ class FishController extends Controller
     public function success(): View
     {
         $viewData = [];
-        $viewData['title'] = 'Fish created successfully';
-        $viewData['subtitle'] = 'Fish created successfully';
+        $viewData['title'] = 'Fish registered successfully';
+        $viewData['subtitle'] = 'Fish registered successfully';
 
         return view('fish.success')->with('viewData', $viewData);
     }

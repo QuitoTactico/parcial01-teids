@@ -2,17 +2,39 @@
 @section('title', $viewData["title"]) 
 @section('subtitle', $viewData["subtitle"]) 
 @section('content') 
-<div class="row"> 
-    @foreach ($viewData["reviews"] as $review) 
-    <div class="col-md-4 col-lg-3 mb-2"> 
-        <div class="card"> 
-        <img src="https://media.zenfs.com/es/levelup_525/2aaa862355fa5749aa728dd95440ffc1" class="card-img-top img-card"> 
-        <div class="card-body text-center"> 
-            <a href="{{ route('review.show', ['id'=> $review["id"]]) }}" 
-            class="btn bg-primary text-white">({{ $review["id"] }}) {{ $review["client"] }}</a> 
-        </div>
-        </div> 
-    </div> 
-    @endforeach 
-</div> 
+<div class="container mt-5">
+    <h1>List of Fishes</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Species</th>
+                <th>Weight</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($viewData["fishes"] as $fish)
+                <tr>
+                    <td>{{ $fish->getId() }}</td>
+                    <td>
+                        @if ($fish->getSpecies() == 'Big Head')
+                            <strong>{{ $fish->getName() }}</strong>
+                        @else
+                            {{ $fish->getName() }}
+                        @endif
+                    </td>
+                    <td>{{ $fish->getSpecies() }}</td>
+                    <td>
+                        @if ($fish->getSpecies() == 'Frog Dog')
+                            <span class="text-blue">{{ $fish->getWeight() }}</span>
+                        @else
+                            {{ $fish->getWeight() }}
+                        @endif
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 @endsection

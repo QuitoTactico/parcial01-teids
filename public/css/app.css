@@ -10,11 +10,15 @@
     background-color: #9378d3 !important; 
 } 
  
-nav{ 
+nav { 
     font-weight: 1000; 
 } 
  
-.img-card{ 
+.img-card { 
     height: 15vw; 
     object-fit: cover; 
-} 
+}
+
+.text-blue {
+    color: blue;
+}

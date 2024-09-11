@@ -21,6 +21,11 @@ class Fish extends Model
 
     protected $table = 'Fishes'; // table name
 
+    /**
+     * Validate the fish data.
+     *
+     * @throws ValidationException
+     */
     public static function validateFishData(array $data): void
     {
         $validator = Validator::make($data, [

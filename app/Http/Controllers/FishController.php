@@ -29,11 +29,7 @@ class FishController extends Controller
 
     public function save(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'species' => 'required|in:Frog Dog,Big Head',
-            'weight' => 'required|numeric|min:0',
-        ]);
+        Fish::validateFishData($request->all());
 
         Fish::create($request->only(['name', 'species', 'weight']));
 
